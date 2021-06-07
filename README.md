@@ -8,6 +8,7 @@
 
 # Additional Comments #
   
- - Tested as working on an Ubuntu 20.04 LTS system with a RX Vega 56 and a Ryzen 5 2600 as of June 2021.
+ - Tested as working on an Ubuntu 20.04 LTS system running kernel `5.4.0-73-generic`
+    with a RX Vega 56 and a Ryzen 5 2600 as of June 2021.
  - Instructions may change depending on future driver and software updates
 
