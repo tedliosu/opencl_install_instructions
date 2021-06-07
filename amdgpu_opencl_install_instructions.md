@@ -5,11 +5,11 @@
 
 2. `wget -q -O - https://repo.radeon.com/rocm/rocm.gpg.key | sudo -H apt-key add -`
      or whatever equivalent command for your Linux Distro copied from
-     [here](https://rocmdocs.amd.com/en/latest/Installation_Guide/Installation-Guide.html).
+     [here](https://rocmdocs.amd.com/en/latest/Installation_Guide/Installation-Guide.html#supported-operating-systems).
 
 3. `echo 'deb [arch=amd64] https://repo.radeon.com/rocm/apt/debian/ xenial main' | sudo -H tee /etc/apt/sources.list.d/rocm.list`
      or whatever equivalent command for your Linux Distro copied from
-     [here](https://rocmdocs.amd.com/en/latest/Installation_Guide/Installation-Guide.html).
+     [here](https://rocmdocs.amd.com/en/latest/Installation_Guide/Installation-Guide.html#supported-operating-systems).
 
 4. `sudo -H apt update` or whatever equivalent command for your Linux Distro
 
@@ -17,8 +17,8 @@
     and graphics card **FROM THE "Professional Graphics" LIST OF DRIVERS**. **DO NOT DOWNLOAD
     from the "Graphics" only list of drivers**; those drivers unlike the "Professional Graphics"
     drivers tend to not be as stable. Since I have a Vega 56 *which shares the same architecture*
-    as a Vega Frontier Edition professional graphics card, I chose > "Professional Graphics" ->
-    "AMD Radeon Pro" -> "Radeon Pro Series" -> "Radeon Vega Frontier Edition (Air-cooled)"
+    as a Vega Frontier Edition professional graphics card, I chose:
+    > "Professional Graphics" -> "AMD Radeon Pro" -> "Radeon Pro Series" -> "Radeon Vega Frontier Edition (Air-cooled)"
 
     and then clicked the submit button to get my driver to be downloaded and
     installed.  The resulting driver download should be some sort of tar archive
@@ -29,7 +29,7 @@
 
 7. Run the `amdgpu-pro-install` command but **DO NOT agree to actually installing the
     packages on your Linux distro**; this step is simply to ensure that all of
-    the packages within the archive downloaded from [amd.com](amd.com) gets loaded into the
+    the packages within the archive downloaded from [amd.com](https://amd.com) gets loaded into the
     local */var/opt/amdgpu-pro-local* repository.
 
 8. NOW install the following packages into your machine (or whatever equivalent the
@@ -44,8 +44,9 @@
    > rocm-utils rocminfo clinfo
 
    where ${LLVM_VERSION} is the version of LLVM that the default "llvm" package ships with
-   for your Linux distro; as of time of this writing it's "10.0" (for Ubuntu at least
-   you may find out this information by executing `sudo -H apt-cache show llvm | grep "Version" | grep -o "[[:digit:]]*\.[[:digit:]]*"` on the
+   for your Linux distro; as of time of this writing it's "10.0" for my Ubuntu machine. (for
+   Ubuntu at least you may find out this information by executing
+   `sudo -H apt-cache show llvm | grep "Version" | grep -o "[[:digit:]]*\.[[:digit:]]*"` on the
    system CLI.)
 
 9. Reboot your machine
